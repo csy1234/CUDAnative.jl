@@ -23,6 +23,7 @@ end
 include("utils.jl")
 
 # needs to be loaded _before_ the compiler infrastructure, because of generated functions
+isdevice() = false
 include(joinpath("device", "tools.jl"))
 include(joinpath("device", "pointer.jl"))
 include(joinpath("device", "array.jl"))
@@ -31,6 +32,7 @@ include(joinpath("device", "cuda_intrinsics.jl"))
 include(joinpath("device", "runtime_intrinsics.jl"))
 
 include("compiler.jl")
+include("context.jl")
 include("execution.jl")
 include("reflection.jl")
 
